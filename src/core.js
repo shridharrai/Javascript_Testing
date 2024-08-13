@@ -71,12 +71,14 @@ export function canDrive(age, countryCode) {
 
 // Lesson: Testing asynchronous code
 export function fetchData() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const data = [1, 2, 3];
-      resolve(data);
-    });
-  });
+  // return new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     const data = [1, 2, 3];
+  //     resolve(data);
+  //   });
+  // });
+
+  return Promise.reject({ reason: "Operation failed" });
 }
 
 // Lesson: Setup and teardown
