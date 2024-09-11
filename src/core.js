@@ -1,5 +1,5 @@
 // Exercise: Writing good assertions
-export function getCoupons() {
+export function getCoupons () {
   // return {};
   return [
     { code: "SAVE20NOW", discount: 0.2 },
@@ -8,7 +8,7 @@ export function getCoupons() {
 }
 
 // Lesson: Positive and negative testing
-export function calculateDiscount(price, discountCode) {
+export function calculateDiscount (price, discountCode) {
   if (typeof price !== "number" || price <= 0) {
     return "Invalid price";
   }
@@ -28,7 +28,7 @@ export function calculateDiscount(price, discountCode) {
 }
 
 // Exercise: Positive and negative testing
-export function validateUserInput(username, age) {
+export function validateUserInput (username, age) {
   let errors = [];
 
   if (typeof username !== "string" || username.length < 3) {
@@ -43,12 +43,12 @@ export function validateUserInput(username, age) {
 }
 
 // Lesson: Boundary testing
-export function isPriceInRange(price, min, max) {
+export function isPriceInRange (price, min, max) {
   return price >= min && price <= max;
 }
 
 // Exercise: Boundary testing
-export function isValidUsername(username) {
+export function isValidUsername (username) {
   const minLength = 5;
   const maxLength = 15;
 
@@ -56,7 +56,7 @@ export function isValidUsername(username) {
 }
 
 // Exercise: Boundary testing
-export function canDrive(age, countryCode) {
+export function canDrive (age, countryCode) {
   const legalDrivingAge = {
     US: 16,
     UK: 17,
@@ -70,7 +70,7 @@ export function canDrive(age, countryCode) {
 }
 
 // Lesson: Testing asynchronous code
-export function fetchData() {
+export function fetchData () {
   // return new Promise((resolve) => {
   //   setTimeout(() => {
   //     const data = [1, 2, 3];
@@ -83,43 +83,43 @@ export function fetchData() {
 
 // Lesson: Setup and teardown
 export class Stack {
-  constructor() {
+  constructor () {
     this.items = [];
   }
 
-  push(item) {
+  push (item) {
     this.items.push(item);
   }
 
-  pop() {
+  pop () {
     if (this.isEmpty()) {
       throw new Error("Stack is empty");
     }
     return this.items.pop();
   }
 
-  peek() {
+  peek () {
     if (this.isEmpty()) {
       throw new Error("Stack is empty");
     }
     return this.items[this.items.length - 1];
   }
 
-  isEmpty() {
+  isEmpty () {
     return this.items.length === 0;
   }
 
-  size() {
+  size () {
     return this.items.length;
   }
 
-  clear() {
+  clear () {
     this.items = [];
   }
 }
 
 // Additional exercises
-export function createProduct(product) {
+export function createProduct (product) {
   if (!product.name)
     return {
       success: false,
@@ -135,7 +135,7 @@ export function createProduct(product) {
   return { success: true, message: "Product was successfully published" };
 }
 
-export function isStrongPassword(password) {
+export function isStrongPassword (password) {
   // Check the length of the password (minimum 8 characters)
   if (password.length < 8) {
     return false;
